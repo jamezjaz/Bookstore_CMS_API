@@ -177,3 +177,669 @@ puma (4.3.7) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
   [1m[35m (43.7ms)[0m  [1m[35mCOMMIT[0m
   [1m[35m (0.4ms)[0m  [1m[34mSELECT pg_advisory_unlock(7136226663292424460)[0m
   [1m[35m (1.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/books" for ::1 at 2021-02-18 11:16:58 -0600
+  [1m[35m (1.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  
+ActiveRecord::PendingMigrationError (
+
+Migrations are pending. To resolve this issue, run:
+
+        rails db:migrate RAILS_ENV=development
+
+):
+  
+activerecord (6.0.3.5) lib/active_record/migration.rb:586:in `check_pending!'
+activerecord (6.0.3.5) lib/active_record/migration.rb:564:in `call'
+actionpack (6.0.3.5) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'
+activesupport (6.0.3.5) lib/active_support/callbacks.rb:101:in `run_callbacks'
+actionpack (6.0.3.5) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (6.0.3.5) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.5) lib/action_dispatch/middleware/actionable_exceptions.rb:18:in `call'
+actionpack (6.0.3.5) lib/action_dispatch/middleware/debug_exceptions.rb:32:in `call'
+actionpack (6.0.3.5) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.3.5) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.0.3.5) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.3.5) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.3.5) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.3.5) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.3.5) lib/rails/rack/logger.rb:26:in `call'
+actionpack (6.0.3.5) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.3.5) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.3.5) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.3.5) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.5) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.3.5) lib/action_dispatch/middleware/host_authorization.rb:82:in `call'
+railties (6.0.3.5) lib/rails/engine.rb:527:in `call'
+puma (4.3.7) lib/puma/configuration.rb:228:in `call'
+puma (4.3.7) lib/puma/server.rb:713:in `handle_request'
+puma (4.3.7) lib/puma/server.rb:472:in `process_client'
+puma (4.3.7) lib/puma/server.rb:328:in `block in run'
+puma (4.3.7) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_try_advisory_lock(7136226663292424460)[0m
+  [1m[35m (1.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateBooks (20210218170028)
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (163.5ms)[0m  [1m[35mCREATE TABLE "books" ("id" bigserial primary key, "title" character varying, "author" character varying, "category" character varying, "chapters" integer, "complete_chapters" integer, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[36mprimary::SchemaMigration Create (10.9ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20210218170028"]]
+  [1m[35m (16.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.6ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT pg_advisory_unlock(7136226663292424460)[0m
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/books" for ::1 at 2021-02-18 11:17:43 -0600
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  
+ActionController::RoutingError (No route matches [GET] "/books"):
+  
+actionpack (6.0.3.5) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+actionpack (6.0.3.5) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.3.5) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.0.3.5) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.3.5) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.3.5) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.3.5) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.3.5) lib/rails/rack/logger.rb:26:in `call'
+actionpack (6.0.3.5) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.3.5) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.3.5) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.3.5) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.5) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.3.5) lib/action_dispatch/middleware/host_authorization.rb:82:in `call'
+railties (6.0.3.5) lib/rails/engine.rb:527:in `call'
+puma (4.3.7) lib/puma/configuration.rb:228:in `call'
+puma (4.3.7) lib/puma/server.rb:713:in `handle_request'
+puma (4.3.7) lib/puma/server.rb:472:in `process_client'
+puma (4.3.7) lib/puma/server.rb:328:in `block in run'
+puma (4.3.7) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started GET "/books" for ::1 at 2021-02-18 11:18:48 -0600
+  
+SyntaxError (/home/jamezjaz/Personal_Projects/Bookstore_CMS_API/config/routes.rb:2: syntax error, unexpected ':', expecting end
+  resources: :books
+           ^
+/home/jamezjaz/Personal_Projects/Bookstore_CMS_API/config/routes.rb:4: syntax error, unexpected end, expecting end-of-input):
+  
+config/routes.rb:2: syntax error, unexpected ':', expecting end
+config/routes.rb:4: syntax error, unexpected end, expecting end-of-input
+config/routes.rb:2: syntax error, unexpected ':', expecting end
+config/routes.rb:4: syntax error, unexpected end, expecting end-of-input
+Started GET "/books" for ::1 at 2021-02-18 11:19:11 -0600
+  
+ActionController::RoutingError (uninitialized constant BooksController
+Did you mean?  BookController):
+  
+actionpack (6.0.3.5) lib/action_dispatch/http/request.rb:92:in `rescue in controller_class_for'
+actionpack (6.0.3.5) lib/action_dispatch/http/request.rb:88:in `controller_class_for'
+actionpack (6.0.3.5) lib/action_dispatch/http/request.rb:81:in `controller_class'
+actionpack (6.0.3.5) lib/action_dispatch/routing/route_set.rb:44:in `controller'
+actionpack (6.0.3.5) lib/action_dispatch/routing/route_set.rb:31:in `serve'
+actionpack (6.0.3.5) lib/action_dispatch/journey/router.rb:49:in `block in serve'
+actionpack (6.0.3.5) lib/action_dispatch/journey/router.rb:32:in `each'
+actionpack (6.0.3.5) lib/action_dispatch/journey/router.rb:32:in `serve'
+actionpack (6.0.3.5) lib/action_dispatch/routing/route_set.rb:834:in `call'
+rack (2.2.3) lib/rack/etag.rb:27:in `call'
+rack (2.2.3) lib/rack/conditional_get.rb:27:in `call'
+rack (2.2.3) lib/rack/head.rb:12:in `call'
+activerecord (6.0.3.5) lib/active_record/migration.rb:567:in `call'
+actionpack (6.0.3.5) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'
+activesupport (6.0.3.5) lib/active_support/callbacks.rb:101:in `run_callbacks'
+actionpack (6.0.3.5) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (6.0.3.5) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.5) lib/action_dispatch/middleware/actionable_exceptions.rb:18:in `call'
+actionpack (6.0.3.5) lib/action_dispatch/middleware/debug_exceptions.rb:32:in `call'
+actionpack (6.0.3.5) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.3.5) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.0.3.5) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.3.5) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.3.5) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.3.5) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.3.5) lib/rails/rack/logger.rb:26:in `call'
+actionpack (6.0.3.5) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.3.5) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.3.5) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.3.5) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.5) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.3.5) lib/action_dispatch/middleware/host_authorization.rb:82:in `call'
+railties (6.0.3.5) lib/rails/engine.rb:527:in `call'
+puma (4.3.7) lib/puma/configuration.rb:228:in `call'
+puma (4.3.7) lib/puma/server.rb:713:in `handle_request'
+puma (4.3.7) lib/puma/server.rb:472:in `process_client'
+puma (4.3.7) lib/puma/server.rb:328:in `block in run'
+puma (4.3.7) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started GET "/books" for ::1 at 2021-02-18 11:20:44 -0600
+Processing by BooksController#index as HTML
+  [1m[36mBook Load (0.9ms)[0m  [1m[34mSELECT "books".* FROM "books"[0m
+  ↳ app/controllers/books_controller.rb:6:in `index'
+Completed 200 OK in 26ms (Views: 19.7ms | ActiveRecord: 4.5ms | Allocations: 1940)
+
+
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mBook Create (19.1ms)[0m  [1m[32mINSERT INTO "books" ("title", "author", "category", "chapters", "complete_chapters", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["title", "Book One"], ["author", "Jessy"], ["category", "Action"], ["chapters", 10], ["complete_chapters", 5], ["created_at", "2021-02-18 17:28:35.115081"], ["updated_at", "2021-02-18 17:28:35.115081"]]
+  [1m[35m (41.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mBook Load (1.4ms)[0m  [1m[34mSELECT "books".* FROM "books" LIMIT $1[0m  [["LIMIT", 11]]
+  [1m[36mBook Load (0.5ms)[0m  [1m[34mSELECT "books".* FROM "books" LIMIT $1[0m  [["LIMIT", 11]]
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mBook Create (0.5ms)[0m  [1m[32mINSERT INTO "books" ("title", "author", "category", "chapters", "complete_chapters", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["title", "Book Two"], ["author", "James"], ["category", "Sci-Fi"], ["chapters", 18], ["complete_chapters", 8], ["created_at", "2021-02-18 17:31:56.787007"], ["updated_at", "2021-02-18 17:31:56.787007"]]
+  [1m[35m (10.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mBook Load (0.5ms)[0m  [1m[34mSELECT "books".* FROM "books" LIMIT $1[0m  [["LIMIT", 11]]
+Started GET "/books" for ::1 at 2021-02-18 11:32:26 -0600
+Processing by BooksController#index as HTML
+  [1m[36mBook Load (1.0ms)[0m  [1m[34mSELECT "books".* FROM "books"[0m
+  ↳ app/controllers/books_controller.rb:6:in `index'
+Completed 200 OK in 35ms (Views: 17.9ms | ActiveRecord: 16.6ms | Allocations: 6362)
+
+
+Started GET "/api/v1/todos" for ::1 at 2021-02-18 11:48:17 -0600
+Started GET "/books" for ::1 at 2021-02-18 11:49:14 -0600
+  
+ActionController::RoutingError (No route matches [GET] "/api/v1/todos"):
+  
+actionpack (6.0.3.5) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+actionpack (6.0.3.5) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.3.5) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.0.3.5) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.3.5) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.3.5) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.3.5) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.3.5) lib/rails/rack/logger.rb:26:in `call'
+actionpack (6.0.3.5) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.3.5) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.3.5) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.3.5) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.5) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.3.5) lib/action_dispatch/middleware/host_authorization.rb:82:in `call'
+railties (6.0.3.5) lib/rails/engine.rb:527:in `call'
+puma (4.3.7) lib/puma/configuration.rb:228:in `call'
+puma (4.3.7) lib/puma/server.rb:713:in `handle_request'
+puma (4.3.7) lib/puma/server.rb:472:in `process_client'
+puma (4.3.7) lib/puma/server.rb:328:in `block in run'
+puma (4.3.7) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Processing by BooksController#index as */*
+  [1m[36mBook Load (540.1ms)[0m  [1m[34mSELECT "books".* FROM "books"[0m
+  ↳ app/controllers/books_controller.rb:6:in `index'
+Completed 200 OK in 26105ms (Views: 15166.3ms | ActiveRecord: 540.1ms | Allocations: 3243)
+
+
+Started GET "/books" for ::1 at 2021-02-18 11:54:55 -0600
+Processing by BooksController#index as */*
+  [1m[36mBook Load (31.9ms)[0m  [1m[34mSELECT "books".* FROM "books"[0m
+  ↳ app/controllers/books_controller.rb:6:in `index'
+Completed 200 OK in 339ms (Views: 305.0ms | ActiveRecord: 31.9ms | Allocations: 1152)
+
+
+Started GET "/books" for ::1 at 2021-02-18 11:54:58 -0600
+Processing by BooksController#index as */*
+  [1m[36mBook Load (1.0ms)[0m  [1m[34mSELECT "books".* FROM "books"[0m
+  ↳ app/controllers/books_controller.rb:6:in `index'
+Completed 200 OK in 75ms (Views: 67.0ms | ActiveRecord: 1.0ms | Allocations: 1137)
+
+
+Started GET "/books" for ::1 at 2021-02-18 11:55:02 -0600
+Processing by BooksController#index as */*
+  [1m[36mBook Load (22.3ms)[0m  [1m[34mSELECT "books".* FROM "books"[0m
+  ↳ app/controllers/books_controller.rb:6:in `index'
+Completed 200 OK in 547ms (Views: 514.5ms | ActiveRecord: 22.3ms | Allocations: 1145)
+
+
+Started GET "/books" for ::1 at 2021-02-18 11:55:25 -0600
+Processing by BooksController#index as */*
+  [1m[36mBook Load (0.6ms)[0m  [1m[34mSELECT "books".* FROM "books"[0m
+  ↳ app/controllers/books_controller.rb:6:in `index'
+Completed 200 OK in 163ms (Views: 148.3ms | ActiveRecord: 0.6ms | Allocations: 1138)
+
+
+Started GET "/books" for ::1 at 2021-02-18 11:55:42 -0600
+Processing by BooksController#index as */*
+  [1m[36mBook Load (0.6ms)[0m  [1m[34mSELECT "books".* FROM "books"[0m
+  ↳ app/controllers/books_controller.rb:6:in `index'
+Completed 200 OK in 238ms (Views: 236.4ms | ActiveRecord: 0.6ms | Allocations: 1137)
+
+
+Started GET "/books" for ::1 at 2021-02-18 11:55:54 -0600
+Processing by BooksController#index as */*
+  [1m[36mBook Load (20.4ms)[0m  [1m[34mSELECT "books".* FROM "books"[0m
+  ↳ app/controllers/books_controller.rb:6:in `index'
+Completed 200 OK in 1839ms (Views: 1679.3ms | ActiveRecord: 20.4ms | Allocations: 1141)
+
+
+Started GET "/books" for ::1 at 2021-02-18 11:56:18 -0600
+Processing by BooksController#index as */*
+  [1m[36mBook Load (0.9ms)[0m  [1m[34mSELECT "books".* FROM "books"[0m
+  ↳ app/controllers/books_controller.rb:6:in `index'
+Completed 200 OK in 1935ms (Views: 1933.4ms | ActiveRecord: 0.9ms | Allocations: 1139)
+
+
+Started GET "/books" for ::1 at 2021-02-18 11:56:21 -0600
+Processing by BooksController#index as */*
+  [1m[36mBook Load (0.4ms)[0m  [1m[34mSELECT "books".* FROM "books"[0m
+  ↳ app/controllers/books_controller.rb:6:in `index'
+Completed 200 OK in 166ms (Views: 165.0ms | ActiveRecord: 0.4ms | Allocations: 1137)
+
+
+Started GET "/books" for ::1 at 2021-02-18 11:56:50 -0600
+Processing by BooksController#index as */*
+  [1m[36mBook Load (0.5ms)[0m  [1m[34mSELECT "books".* FROM "books"[0m
+  ↳ app/controllers/books_controller.rb:6:in `index'
+Completed 200 OK in 98ms (Views: 93.2ms | ActiveRecord: 0.5ms | Allocations: 1137)
+
+
+Started GET "/books" for ::1 at 2021-02-18 11:56:56 -0600
+Processing by BooksController#index as */*
+  [1m[36mBook Load (0.6ms)[0m  [1m[34mSELECT "books".* FROM "books"[0m
+  ↳ app/controllers/books_controller.rb:6:in `index'
+Completed 200 OK in 90ms (Views: 89.5ms | ActiveRecord: 0.6ms | Allocations: 1137)
+
+
+Started GET "/books" for ::1 at 2021-02-18 11:57:36 -0600
+Processing by BooksController#index as */*
+  [1m[36mBook Load (0.4ms)[0m  [1m[34mSELECT "books".* FROM "books"[0m
+  ↳ app/controllers/books_controller.rb:6:in `index'
+Completed 200 OK in 50ms (Views: 49.0ms | ActiveRecord: 0.4ms | Allocations: 1137)
+
+
+Started GET "/books" for ::1 at 2021-02-18 11:57:41 -0600
+Processing by BooksController#index as */*
+  [1m[36mBook Load (24.1ms)[0m  [1m[34mSELECT "books".* FROM "books"[0m
+  ↳ app/controllers/books_controller.rb:6:in `index'
+Completed 200 OK in 414ms (Views: 345.9ms | ActiveRecord: 24.1ms | Allocations: 1141)
+
+
+Started GET "/books" for ::1 at 2021-02-18 11:57:46 -0600
+Processing by BooksController#index as */*
+  [1m[36mBook Load (0.7ms)[0m  [1m[34mSELECT "books".* FROM "books"[0m
+  ↳ app/controllers/books_controller.rb:6:in `index'
+Completed 200 OK in 60ms (Views: 55.2ms | ActiveRecord: 0.7ms | Allocations: 1137)
+
+
+Started GET "/books" for ::1 at 2021-02-18 11:58:18 -0600
+Processing by BooksController#index as */*
+  [1m[36mBook Load (1.0ms)[0m  [1m[34mSELECT "books".* FROM "books"[0m
+  ↳ app/controllers/books_controller.rb:6:in `index'
+Completed 200 OK in 162ms (Views: 160.5ms | ActiveRecord: 1.0ms | Allocations: 1138)
+
+
+Started GET "/books" for ::1 at 2021-02-18 11:58:21 -0600
+Processing by BooksController#index as */*
+  [1m[36mBook Load (19.8ms)[0m  [1m[34mSELECT "books".* FROM "books"[0m
+  ↳ app/controllers/books_controller.rb:6:in `index'
+Completed 200 OK in 484ms (Views: 410.1ms | ActiveRecord: 19.8ms | Allocations: 1141)
+
+
+Started GET "/books" for ::1 at 2021-02-18 11:58:26 -0600
+Processing by BooksController#index as */*
+  [1m[36mBook Load (0.5ms)[0m  [1m[34mSELECT "books".* FROM "books"[0m
+  ↳ app/controllers/books_controller.rb:6:in `index'
+Completed 200 OK in 250ms (Views: 249.0ms | ActiveRecord: 0.5ms | Allocations: 1137)
+
+
+Started GET "/books" for ::1 at 2021-02-18 12:03:31 -0600
+Processing by BooksController#index as */*
+  [1m[36mBook Load (291.8ms)[0m  [1m[34mSELECT "books".* FROM "books"[0m
+  ↳ app/controllers/books_controller.rb:6:in `index'
+Completed 200 OK in 935ms (Views: 635.8ms | ActiveRecord: 291.8ms | Allocations: 1138)
+
+
+Started GET "/" for ::1 at 2021-02-18 12:10:41 -0600
+Started GET "/" for ::1 at 2021-02-18 12:10:41 -0600
+  [1m[35m (419.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (1115.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Rails::WelcomeController#index as HTML
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /home/jamezjaz/.rbenv/versions/2.6.5/lib/ruby/gems/2.6.0/gems/railties-6.0.3.5/lib/rails/templates/rails/welcome/index.html.erb
+  Rendering /home/jamezjaz/.rbenv/versions/2.6.5/lib/ruby/gems/2.6.0/gems/railties-6.0.3.5/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /home/jamezjaz/.rbenv/versions/2.6.5/lib/ruby/gems/2.6.0/gems/railties-6.0.3.5/lib/rails/templates/rails/welcome/index.html.erb (Duration: 71.7ms | Allocations: 317)
+Completed 200 OK in 815ms (Views: 369.1ms | ActiveRecord: 0.0ms | Allocations: 1666)
+
+
+  Rendered /home/jamezjaz/.rbenv/versions/2.6.5/lib/ruby/gems/2.6.0/gems/railties-6.0.3.5/lib/rails/templates/rails/welcome/index.html.erb (Duration: 51.2ms | Allocations: 220)
+Completed 200 OK in 820ms (Views: 200.2ms | ActiveRecord: 0.0ms | Allocations: 2065)
+
+
+Started GET "/favicon.ico" for ::1 at 2021-02-18 12:10:59 -0600
+  
+ActionController::RoutingError (No route matches [GET] "/favicon.ico"):
+  
+actionpack (6.0.3.5) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+actionpack (6.0.3.5) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.3.5) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.0.3.5) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.3.5) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.3.5) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.3.5) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.3.5) lib/rails/rack/logger.rb:26:in `call'
+actionpack (6.0.3.5) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.3.5) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.3.5) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.3.5) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.5) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.3.5) lib/action_dispatch/middleware/host_authorization.rb:82:in `call'
+rack-cors (1.1.1) lib/rack/cors.rb:100:in `call'
+railties (6.0.3.5) lib/rails/engine.rb:527:in `call'
+puma (4.3.7) lib/puma/configuration.rb:228:in `call'
+puma (4.3.7) lib/puma/server.rb:713:in `handle_request'
+puma (4.3.7) lib/puma/server.rb:472:in `process_client'
+puma (4.3.7) lib/puma/server.rb:328:in `block in run'
+puma (4.3.7) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started GET "/books" for ::1 at 2021-02-18 12:14:23 -0600
+Processing by BooksController#index as HTML
+  [1m[36mBook Load (325.7ms)[0m  [1m[34mSELECT "books".* FROM "books"[0m
+  ↳ app/controllers/books_controller.rb:6:in `index'
+Completed 200 OK in 1697ms (Views: 652.4ms | ActiveRecord: 816.7ms | Allocations: 7423)
+
+
+Started GET "/books" for ::1 at 2021-02-18 12:15:56 -0600
+Processing by BooksController#index as */*
+  [1m[36mBook Load (380.9ms)[0m  [1m[34mSELECT "books".* FROM "books"[0m
+  ↳ app/controllers/books_controller.rb:6:in `index'
+Completed 200 OK in 385ms (Views: 4.1ms | ActiveRecord: 380.9ms | Allocations: 1140)
+
+
+Started GET "/books" for ::1 at 2021-02-18 12:16:31 -0600
+Processing by BooksController#index as */*
+  [1m[36mBook Load (0.6ms)[0m  [1m[34mSELECT "books".* FROM "books"[0m
+  ↳ app/controllers/books_controller.rb:6:in `index'
+Completed 200 OK in 42ms (Views: 41.1ms | ActiveRecord: 0.6ms | Allocations: 1154)
+
+
+Started GET "/books" for ::1 at 2021-02-18 12:16:31 -0600
+Processing by BooksController#index as */*
+  [1m[36mBook Load (0.7ms)[0m  [1m[34mSELECT "books".* FROM "books"[0m
+  ↳ app/controllers/books_controller.rb:6:in `index'
+Completed 200 OK in 3ms (Views: 1.9ms | ActiveRecord: 0.7ms | Allocations: 1138)
+
+
+Started GET "/books" for ::1 at 2021-02-18 12:16:43 -0600
+Processing by BooksController#index as */*
+  [1m[36mBook Load (9.6ms)[0m  [1m[34mSELECT "books".* FROM "books"[0m
+  ↳ app/controllers/books_controller.rb:6:in `index'
+Completed 200 OK in 13ms (Views: 2.9ms | ActiveRecord: 9.6ms | Allocations: 1156)
+
+
+Started GET "/books" for ::1 at 2021-02-18 12:17:10 -0600
+Processing by BooksController#index as */*
+  [1m[36mBook Load (0.7ms)[0m  [1m[34mSELECT "books".* FROM "books"[0m
+  ↳ app/controllers/books_controller.rb:6:in `index'
+Completed 200 OK in 4ms (Views: 3.0ms | ActiveRecord: 0.7ms | Allocations: 1138)
+
+
+Started GET "/books" for ::1 at 2021-02-18 12:17:14 -0600
+Processing by BooksController#index as */*
+  [1m[36mBook Load (0.7ms)[0m  [1m[34mSELECT "books".* FROM "books"[0m
+  ↳ app/controllers/books_controller.rb:6:in `index'
+Completed 200 OK in 4ms (Views: 2.8ms | ActiveRecord: 0.7ms | Allocations: 1138)
+
+
+Started GET "/books" for ::1 at 2021-02-18 12:21:20 -0600
+Processing by BooksController#index as */*
+  [1m[36mBook Load (7.9ms)[0m  [1m[34mSELECT "books".* FROM "books"[0m
+  ↳ app/controllers/books_controller.rb:6:in `index'
+Completed 200 OK in 13ms (Views: 2.6ms | ActiveRecord: 7.9ms | Allocations: 1141)
+
+
+Started GET "/books" for ::1 at 2021-02-18 12:21:38 -0600
+Processing by BooksController#index as */*
+  [1m[36mBook Load (0.8ms)[0m  [1m[34mSELECT "books".* FROM "books"[0m
+  ↳ app/controllers/books_controller.rb:6:in `index'
+Completed 200 OK in 5ms (Views: 3.4ms | ActiveRecord: 0.8ms | Allocations: 1138)
+
+
+Started GET "/books" for ::1 at 2021-02-18 12:21:46 -0600
+Processing by BooksController#index as */*
+  [1m[36mBook Load (3.8ms)[0m  [1m[34mSELECT "books".* FROM "books"[0m
+  ↳ app/controllers/books_controller.rb:6:in `index'
+Completed 200 OK in 9ms (Views: 4.4ms | ActiveRecord: 3.8ms | Allocations: 1138)
+
+
+Started GET "/books" for ::1 at 2021-02-18 12:21:52 -0600
+Processing by BooksController#index as */*
+  [1m[36mBook Load (0.4ms)[0m  [1m[34mSELECT "books".* FROM "books"[0m
+  ↳ app/controllers/books_controller.rb:6:in `index'
+Completed 200 OK in 7ms (Views: 5.9ms | ActiveRecord: 0.4ms | Allocations: 1138)
+
+
+Started GET "/books" for ::1 at 2021-02-18 12:22:22 -0600
+Processing by BooksController#index as */*
+  [1m[36mBook Load (0.5ms)[0m  [1m[34mSELECT "books".* FROM "books"[0m
+  ↳ app/controllers/books_controller.rb:6:in `index'
+Completed 200 OK in 7ms (Views: 6.1ms | ActiveRecord: 0.5ms | Allocations: 1138)
+
+
+Started GET "/books" for ::1 at 2021-02-18 12:22:26 -0600
+Processing by BooksController#index as */*
+  [1m[36mBook Load (1.3ms)[0m  [1m[34mSELECT "books".* FROM "books"[0m
+  ↳ app/controllers/books_controller.rb:6:in `index'
+Completed 200 OK in 7ms (Views: 4.9ms | ActiveRecord: 1.3ms | Allocations: 1138)
+
+
+Started GET "/books" for ::1 at 2021-02-18 12:22:37 -0600
+Processing by BooksController#index as */*
+  [1m[36mBook Load (0.4ms)[0m  [1m[34mSELECT "books".* FROM "books"[0m
+  ↳ app/controllers/books_controller.rb:6:in `index'
+Completed 200 OK in 6ms (Views: 4.7ms | ActiveRecord: 0.4ms | Allocations: 1138)
+
+
+Started GET "/books" for ::1 at 2021-02-18 12:22:49 -0600
+Processing by BooksController#index as */*
+  [1m[36mBook Load (0.9ms)[0m  [1m[34mSELECT "books".* FROM "books"[0m
+  ↳ app/controllers/books_controller.rb:6:in `index'
+Completed 200 OK in 7ms (Views: 5.6ms | ActiveRecord: 0.9ms | Allocations: 1138)
+
+
+Started GET "/books" for ::1 at 2021-02-18 12:22:52 -0600
+Processing by BooksController#index as */*
+  [1m[36mBook Load (0.4ms)[0m  [1m[34mSELECT "books".* FROM "books"[0m
+  ↳ app/controllers/books_controller.rb:6:in `index'
+Completed 200 OK in 42ms (Views: 41.1ms | ActiveRecord: 0.4ms | Allocations: 1138)
+
+
+Started GET "/books" for ::1 at 2021-02-18 12:23:01 -0600
+Processing by BooksController#index as */*
+  [1m[36mBook Load (9.7ms)[0m  [1m[34mSELECT "books".* FROM "books"[0m
+  ↳ app/controllers/books_controller.rb:6:in `index'
+Completed 200 OK in 15ms (Views: 4.6ms | ActiveRecord: 9.7ms | Allocations: 1138)
+
+
+Started GET "/books" for ::1 at 2021-02-18 12:23:04 -0600
+Processing by BooksController#index as */*
+  [1m[36mBook Load (2.0ms)[0m  [1m[34mSELECT "books".* FROM "books"[0m
+  ↳ app/controllers/books_controller.rb:6:in `index'
+Completed 200 OK in 6ms (Views: 3.9ms | ActiveRecord: 2.0ms | Allocations: 1138)
+
+
+Started GET "/books" for ::1 at 2021-02-18 12:23:21 -0600
+Processing by BooksController#index as */*
+  [1m[36mBook Load (1.2ms)[0m  [1m[34mSELECT "books".* FROM "books"[0m
+  ↳ app/controllers/books_controller.rb:6:in `index'
+Completed 200 OK in 6ms (Views: 4.4ms | ActiveRecord: 1.2ms | Allocations: 1138)
+
+
+Started GET "/books" for ::1 at 2021-02-18 12:23:30 -0600
+Processing by BooksController#index as */*
+  [1m[36mBook Load (0.5ms)[0m  [1m[34mSELECT "books".* FROM "books"[0m
+  ↳ app/controllers/books_controller.rb:6:in `index'
+Completed 200 OK in 6ms (Views: 5.4ms | ActiveRecord: 0.5ms | Allocations: 1138)
+
+
+Started GET "/books" for ::1 at 2021-02-18 12:24:07 -0600
+Processing by BooksController#index as */*
+  [1m[36mBook Load (1.6ms)[0m  [1m[34mSELECT "books".* FROM "books"[0m
+  ↳ app/controllers/books_controller.rb:6:in `index'
+Completed 200 OK in 7ms (Views: 4.7ms | ActiveRecord: 1.6ms | Allocations: 1138)
+
+
+Started GET "/books" for ::1 at 2021-02-18 12:24:16 -0600
+Processing by BooksController#index as */*
+  [1m[36mBook Load (0.5ms)[0m  [1m[34mSELECT "books".* FROM "books"[0m
+  ↳ app/controllers/books_controller.rb:6:in `index'
+Completed 200 OK in 11ms (Views: 9.9ms | ActiveRecord: 0.5ms | Allocations: 1138)
+
+
+Started GET "/books" for ::1 at 2021-02-18 12:24:27 -0600
+Processing by BooksController#index as */*
+  [1m[36mBook Load (0.5ms)[0m  [1m[34mSELECT "books".* FROM "books"[0m
+  ↳ app/controllers/books_controller.rb:6:in `index'
+Completed 200 OK in 16ms (Views: 15.4ms | ActiveRecord: 0.5ms | Allocations: 1138)
+
+
+Started GET "/books" for ::1 at 2021-02-18 12:24:32 -0600
+Processing by BooksController#index as */*
+  [1m[36mBook Load (0.4ms)[0m  [1m[34mSELECT "books".* FROM "books"[0m
+  ↳ app/controllers/books_controller.rb:6:in `index'
+Completed 200 OK in 5ms (Views: 4.5ms | ActiveRecord: 0.4ms | Allocations: 1138)
+
+
+Started GET "/books" for ::1 at 2021-02-18 12:25:13 -0600
+Processing by BooksController#index as */*
+  [1m[36mBook Load (0.9ms)[0m  [1m[34mSELECT "books".* FROM "books"[0m
+  ↳ app/controllers/books_controller.rb:6:in `index'
+Completed 200 OK in 11ms (Views: 10.0ms | ActiveRecord: 0.9ms | Allocations: 1138)
+
+
+Started GET "/books" for ::1 at 2021-02-18 12:25:16 -0600
+Processing by BooksController#index as */*
+  [1m[36mBook Load (0.4ms)[0m  [1m[34mSELECT "books".* FROM "books"[0m
+  ↳ app/controllers/books_controller.rb:6:in `index'
+Completed 200 OK in 4ms (Views: 3.7ms | ActiveRecord: 0.4ms | Allocations: 1138)
+
+
+Started GET "/books" for ::1 at 2021-02-18 12:25:27 -0600
+Processing by BooksController#index as */*
+  [1m[36mBook Load (2.7ms)[0m  [1m[34mSELECT "books".* FROM "books"[0m
+  ↳ app/controllers/books_controller.rb:6:in `index'
+Completed 200 OK in 8ms (Views: 5.1ms | ActiveRecord: 2.7ms | Allocations: 1138)
+
+
+Started GET "/books" for ::1 at 2021-02-18 12:26:46 -0600
+Processing by BooksController#index as */*
+  [1m[36mBook Load (10.5ms)[0m  [1m[34mSELECT "books".* FROM "books"[0m
+  ↳ app/controllers/books_controller.rb:6:in `index'
+Completed 200 OK in 58ms (Views: 47.0ms | ActiveRecord: 10.5ms | Allocations: 1138)
+
+
+Started GET "/books" for ::1 at 2021-02-18 12:26:53 -0600
+Processing by BooksController#index as */*
+  [1m[36mBook Load (1.4ms)[0m  [1m[34mSELECT "books".* FROM "books"[0m
+  ↳ app/controllers/books_controller.rb:6:in `index'
+Completed 200 OK in 8ms (Views: 6.7ms | ActiveRecord: 1.4ms | Allocations: 1138)
+
+
+Started GET "/books" for ::1 at 2021-02-18 12:27:20 -0600
+Processing by BooksController#index as */*
+  [1m[36mBook Load (0.4ms)[0m  [1m[34mSELECT "books".* FROM "books"[0m
+  ↳ app/controllers/books_controller.rb:6:in `index'
+Completed 200 OK in 19ms (Views: 18.1ms | ActiveRecord: 0.4ms | Allocations: 1138)
+
+
+Started GET "/books" for ::1 at 2021-02-18 12:27:29 -0600
+Processing by BooksController#index as */*
+  [1m[36mBook Load (2.2ms)[0m  [1m[34mSELECT "books".* FROM "books"[0m
+  ↳ app/controllers/books_controller.rb:6:in `index'
+Completed 200 OK in 11ms (Views: 8.1ms | ActiveRecord: 2.2ms | Allocations: 1138)
+
+
+Started GET "/books" for ::1 at 2021-02-18 12:27:41 -0600
+Processing by BooksController#index as */*
+  [1m[36mBook Load (0.4ms)[0m  [1m[34mSELECT "books".* FROM "books"[0m
+  ↳ app/controllers/books_controller.rb:6:in `index'
+Completed 200 OK in 5ms (Views: 3.7ms | ActiveRecord: 0.4ms | Allocations: 1138)
+
+
+Started GET "/books" for ::1 at 2021-02-18 12:27:43 -0600
+Processing by BooksController#index as */*
+  [1m[36mBook Load (0.5ms)[0m  [1m[34mSELECT "books".* FROM "books"[0m
+  ↳ app/controllers/books_controller.rb:6:in `index'
+Completed 200 OK in 4ms (Views: 3.0ms | ActiveRecord: 0.5ms | Allocations: 1139)
+
+
+Started GET "/books" for ::1 at 2021-02-18 12:27:50 -0600
+Processing by BooksController#index as */*
+  [1m[36mBook Load (1.7ms)[0m  [1m[34mSELECT "books".* FROM "books"[0m
+  ↳ app/controllers/books_controller.rb:6:in `index'
+Completed 200 OK in 7ms (Views: 5.0ms | ActiveRecord: 1.7ms | Allocations: 1138)
+
+
+Started GET "/books" for ::1 at 2021-02-18 12:27:54 -0600
+Processing by BooksController#index as */*
+  [1m[36mBook Load (2.1ms)[0m  [1m[34mSELECT "books".* FROM "books"[0m
+  ↳ app/controllers/books_controller.rb:6:in `index'
+Completed 200 OK in 12ms (Views: 9.0ms | ActiveRecord: 2.1ms | Allocations: 1138)
+
+
+Started GET "/books" for ::1 at 2021-02-18 12:27:58 -0600
+Processing by BooksController#index as */*
+  [1m[36mBook Load (2.1ms)[0m  [1m[34mSELECT "books".* FROM "books"[0m
+  ↳ app/controllers/books_controller.rb:6:in `index'
+Completed 200 OK in 5ms (Views: 2.7ms | ActiveRecord: 2.1ms | Allocations: 1138)
+
+
+Started GET "/books" for ::1 at 2021-02-18 12:27:59 -0600
+Processing by BooksController#index as */*
+  [1m[36mBook Load (0.4ms)[0m  [1m[34mSELECT "books".* FROM "books"[0m
+  ↳ app/controllers/books_controller.rb:6:in `index'
+Completed 200 OK in 4ms (Views: 2.8ms | ActiveRecord: 0.4ms | Allocations: 1138)
+
+
+Started GET "/books" for ::1 at 2021-02-18 12:28:01 -0600
+Processing by BooksController#index as */*
+  [1m[36mBook Load (0.7ms)[0m  [1m[34mSELECT "books".* FROM "books"[0m
+  ↳ app/controllers/books_controller.rb:6:in `index'
+Completed 200 OK in 4ms (Views: 3.2ms | ActiveRecord: 0.7ms | Allocations: 1138)
+
+
+Started GET "/books" for ::1 at 2021-02-18 12:28:12 -0600
+Processing by BooksController#index as */*
+  [1m[36mBook Load (0.5ms)[0m  [1m[34mSELECT "books".* FROM "books"[0m
+  ↳ app/controllers/books_controller.rb:6:in `index'
+Completed 200 OK in 5ms (Views: 4.1ms | ActiveRecord: 0.5ms | Allocations: 1138)
+
+
+Started GET "/books" for ::1 at 2021-02-18 12:28:14 -0600
+Processing by BooksController#index as */*
+  [1m[36mBook Load (2.7ms)[0m  [1m[34mSELECT "books".* FROM "books"[0m
+  ↳ app/controllers/books_controller.rb:6:in `index'
+Completed 200 OK in 10ms (Views: 7.2ms | ActiveRecord: 2.7ms | Allocations: 1138)
+
+
+Started GET "/books" for ::1 at 2021-02-18 12:28:25 -0600
+Processing by BooksController#index as */*
+  [1m[36mBook Load (0.6ms)[0m  [1m[34mSELECT "books".* FROM "books"[0m
+  ↳ app/controllers/books_controller.rb:6:in `index'
+Completed 200 OK in 4ms (Views: 3.2ms | ActiveRecord: 0.6ms | Allocations: 1138)
+
+
+Started GET "/books" for ::1 at 2021-02-18 12:29:52 -0600
+Processing by BooksController#index as */*
+  [1m[36mBook Load (146.7ms)[0m  [1m[34mSELECT "books".* FROM "books"[0m
+  ↳ app/controllers/books_controller.rb:6:in `index'
+Completed 200 OK in 2295ms (Views: 1220.7ms | ActiveRecord: 146.7ms | Allocations: 1142)
+
+
+Started GET "/books" for ::1 at 2021-02-18 12:30:49 -0600
+Processing by BooksController#index as */*
+  [1m[36mBook Load (0.5ms)[0m  [1m[34mSELECT "books".* FROM "books"[0m
+  ↳ app/controllers/books_controller.rb:6:in `index'
+Completed 200 OK in 195ms (Views: 187.5ms | ActiveRecord: 0.5ms | Allocations: 1138)
+
+
+Started GET "/books" for ::1 at 2021-02-18 12:33:31 -0600
+Processing by BooksController#index as */*
+  [1m[36mBook Load (0.6ms)[0m  [1m[34mSELECT "books".* FROM "books"[0m
+  ↳ app/controllers/books_controller.rb:6:in `index'
+Completed 200 OK in 87ms (Views: 44.4ms | ActiveRecord: 0.6ms | Allocations: 1138)
+
+
+Started GET "/books" for ::1 at 2021-02-18 12:33:32 -0600
+Processing by BooksController#index as */*
+  [1m[36mBook Load (0.7ms)[0m  [1m[34mSELECT "books".* FROM "books"[0m
+  ↳ app/controllers/books_controller.rb:6:in `index'
+Completed 200 OK in 44ms (Views: 43.0ms | ActiveRecord: 0.7ms | Allocations: 1138)
+
+
