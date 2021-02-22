@@ -1,9 +1,19 @@
 class BooksController < ApplicationController
   # GET /books
-  def index
-    @books = Book.all
 
-    render json: @books
+  def index
+    @array = []
+    @books = Book.all
+    @books.map do |book|
+      @array.push({
+        title: book.title,
+        author: book.author,
+        category: book.category,
+        percentage: book.complete_chapters * 100 / book.chapters,
+      })
+    end
+
+    render json: @array
   end
 
   # POST /books
