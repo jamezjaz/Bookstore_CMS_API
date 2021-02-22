@@ -6,6 +6,7 @@ class BooksController < ApplicationController
     @books = Book.all
     @books.map do |book|
       @array.push({
+        id: book.id,
         title: book.title,
         author: book.author,
         category: book.category,
