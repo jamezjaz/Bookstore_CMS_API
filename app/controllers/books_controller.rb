@@ -30,7 +30,9 @@ class BooksController < ApplicationController
 
   # PATCH/PUT /books/1
   def update
-    if @book.update(book_params)
+    @book = Book.find(params[:id])
+    @book.complete_chapters += 1
+    if @book.update
       render json: @book
     else
       render json: @book.errors, status: :unprocessable_entity
