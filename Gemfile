@@ -39,3 +39,6 @@ end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
+
+# Hirb provides a mini view framework for console applications and uses it to improve ripl(irb)'s default inspect output
+gem 'hirb', '~> 0.7.3'

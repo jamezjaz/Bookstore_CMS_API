@@ -2982,3 +2982,4 @@ Processing by BooksController#index as */*
 Completed 200 OK in 15ms (Views: 4.3ms | ActiveRecord: 2.4ms | Allocations: 821)
 
 
+  [1m[36mBook Load (68.8ms)[0m  [1m[34mSELECT "books".* FROM "books"[0m
