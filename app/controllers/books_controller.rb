@@ -3,7 +3,7 @@ class BooksController < ApplicationController
 
   def index
     @array = []
-    @books = Book.all
+    @books = Book.all.order(id: :asc)
     @books.map do |book|
       @array.push({
         id: book.id,
