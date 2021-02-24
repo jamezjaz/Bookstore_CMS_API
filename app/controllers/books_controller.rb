@@ -10,6 +10,8 @@ class BooksController < ApplicationController
         title: book.title,
         author: book.author,
         category: book.category,
+        complete_chapters: book.complete_chapters,
+        chapters: book.chapters,
         percentage: book.complete_chapters * 100 / book.chapters,
       })
     end
@@ -41,6 +43,7 @@ class BooksController < ApplicationController
 
   # DELETE /books/1
   def destroy
+    @book = Book.find(params[:id])
     @book.destroy
   end
 
