@@ -1,0 +1,15 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  title: MyString
+  author: MyString
+  category: MyString
+  chapters: 1
+  complete_chapters: 1
+
+two:
+  title: MyString
+  author: MyString
+  category: MyString
+  chapters: 1
+  complete_chapters: 1
