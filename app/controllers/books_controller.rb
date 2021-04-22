@@ -6,14 +6,14 @@ class BooksController < ApplicationController
     @books = Book.all.order(id: :asc)
     @books.map do |book|
       @array.push({
-        id: book.id,
-        title: book.title,
-        author: book.author,
-        category: book.category,
-        complete_chapters: book.complete_chapters,
-        chapters: book.chapters,
-        percentage: book.complete_chapters * 100 / book.chapters,
-      })
+                    id: book.id,
+                    title: book.title,
+                    author: book.author,
+                    category: book.category,
+                    complete_chapters: book.complete_chapters,
+                    chapters: book.chapters,
+                    percentage: book.complete_chapters * 100 / book.chapters
+                  })
     end
 
     render json: @array
@@ -24,16 +24,16 @@ class BooksController < ApplicationController
     @book = Book.new(book_params)
 
     if @book.save
-        render json: @book, status: :created, location: @book
+      render json: @book, status: :created, location: @book
     else
-        render json: @book.errors, status: :unprocessable_entity
+      render json: @book.errors, status: :unprocessable_entity
     end
   end
 
   # PATCH/PUT /books/1
   def update
     @book = Book.find(params[:id])
-    @chapters_complete = @book.complete_chapters < @book.chapters ? @book.complete_chapters+1 : 0
+    @chapters_complete = @book.complete_chapters < @book.chapters ? @book.complete_chapters + 1 : 0
     if @book.update(complete_chapters: @chapters_complete)
       render json: @book
     else
